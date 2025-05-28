@@ -7,17 +7,17 @@ import time
 # Langchain and LLM related imports
 from langchain.memory import ConversationBufferMemory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-# from langchain_core.runnables import RunnablePassthrough, RunnableMap # Not strictly needed for this manual approach
+# from langchain_core.runnables import RunnablePassthrough, RunnableMap 
 from langchain_core.output_parsers import StrOutputParser
 from langchain.schema import HumanMessage, SystemMessage, AIMessage 
 
 from langchain_huggingface import HuggingFaceEmbeddings, ChatHuggingFace, HuggingFaceEndpoint
 from langchain_chroma import Chroma
 
-# --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
+
 st.set_page_config(page_title="Funny Storyteller Bot", layout="wide", initial_sidebar_state="expanded")
 
-# Your custom modules
+# custom modules
 try:
     from audio_handler import speech_to_text_from_mic, text_to_speech_elevenlabs 
     AUDIO_ENABLED = True
